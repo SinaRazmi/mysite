@@ -6,4 +6,5 @@ def blog_view(request):
 
 
 def blog_single(request):
-    return render(request, 'blog/blog-single.html')
+    context = {'title':'Bitcoin crashed again', 'content':'bitcoint was flying but now grounded as always...' , 'author':'Sina Razmi'}
+    return render(request, 'blog/blog-single.html', context)
