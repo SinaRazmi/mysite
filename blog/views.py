@@ -8,8 +8,11 @@ def blog_view(request):
     return render(request, 'blog/blog-home.html', context)
 
 
-def blog_single(request):
-    context = {'title':'Bitcoin crashed again', 'content':'bitcoint was flying but now grounded as always...' , 'author':'Sina Razmi'}
+def blog_single(request, pid):
+    posts = Post.objects.filter(status=1)
+    # post = get_object_or_404(posts, pk=pid, status=1)
+    post = get_object_or_404(posts, pk=pid)
+    context = {'post': post}
     return render(request, 'blog/blog-single.html', context)
 
 
