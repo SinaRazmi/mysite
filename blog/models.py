@@ -33,4 +33,5 @@ class Post(models.Model):
         return self.title
     
 
-
+    def snippets(self):
+        return self.content[:150] + '...'
