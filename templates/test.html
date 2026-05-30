@@ -1,3 +1,5 @@
+{% load blog_tags %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,21 +9,14 @@
 <body>
 
 
-    <p>{{ post }}</p>
+   <h1>Testing Page</h1>
+   <p>test:  {% posts as totalposts %}</p>
+    
+    {% for post in totalposts %}
+        <p>{{post.content|snippet:50}}</p>
+    {% endfor %}
     
 
-    <!-- {{posts}}
-    <br>
-    
-    {% for post in posts %}
-        {% if post.status == 0 %}
-            <p>Not Published yet</p>
-            {% else %}
-                <h1>{{post.title}}</h1>
-                <p style="color: grey;">{{post.content}}</p>
-                <small style="color: darkgray;">{{post.published_date}}</small>
-        {% endif %}
-    {% endfor %} -->
 
 </body>
 </html>
