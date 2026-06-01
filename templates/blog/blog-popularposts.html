@@ -1,0 +1,18 @@
+{% load static %}
+
+<div class="single-sidebar-widget popular-post-widget popular-title" style="margin-left: 20px;">
+		<h4 class="popular-title" style="margin-bottom: 15px;">Popular Posts</h4>
+		<div class="popular-post-list">
+            {% for post in posts %}
+			    <div class="single-post-list d-flex flex-row align-items-center" style="margin-bottom: 18px;"> 
+				    <div class="thumb">
+				    	<img class="img-fluid" src="{{ post.image.url}}" alt="">
+				    </div>
+				    <div class="details style="margin-left: 15px; >
+				    	<a href="{% url 'blog:single' pid=post.id	%}" ><h6>{{ post.title }}</h6></a>
+				    	<p>{{ post.published_date|date:'d M Y' }}</p>
+				    </div>
+			    </div>
+            {% endfor %}
+		</div>popular-title
+</div>
