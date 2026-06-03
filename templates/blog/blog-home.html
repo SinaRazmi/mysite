@@ -94,14 +94,10 @@
 							<div class="single-post row">
 								<div class="col-lg-3  col-md-3 meta-details">
 									<ul class="tags">
-										<!-- solution 01 -->
-										<!-- {% for cat in post.category.all %}
-											<li><a href="#">{{ cat.name }}</a></li>
+										 {% for cat in post.category.all %}
+											<li><a href="{% url 'blog:category' cat_name=cat.name %}">{{ cat.name }}</a></li>
 										{% endfor %}
-										 -->
-										
-										<!-- solution 02 -->
-										<li><a href="#">{{ post.category.all|join:', '}}</a></li>
+										 
 										
 									</ul>
 									<div class="user-details row">
